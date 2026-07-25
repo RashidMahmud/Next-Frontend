@@ -1,7 +1,7 @@
 import React from "react";
 
 function AuthorsPage() {
-  return <div>AuthorsPage 5:00</div>;
+  return <div>AuthorsPage</div>;
 }
 
 export default AuthorsPage;
