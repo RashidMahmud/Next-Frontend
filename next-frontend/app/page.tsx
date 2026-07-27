@@ -1,11 +1,4 @@
-import LikeButton from "./ui/LikeButton";
-
 export default function Home() {
-  return (
-    <div>
-      {" "}
-      Hello Next.js
-      <LikeButton />
-    </div>
-  );
+  console.log("Root Route");
+  return <div> Hello Next.js </div>;
 }
