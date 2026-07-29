@@ -10,11 +10,17 @@ import { toast } from "sonner";
 
 const LoginForm = () => {
   const [state, action, pending] = useActionState(loginAction, false);
+  console.log(state, "state");
 
   useEffect(() => {
     if (!state) return;
 
-    toast.error(state.message || "Login failed");
+    if (state.success) {
+      toast.success(state.message || "Login successful");
+    }
+    if (!state.success) {
+      toast.error(state.message || "Login failed");
+    }
   }, [state]);
 
   return (
