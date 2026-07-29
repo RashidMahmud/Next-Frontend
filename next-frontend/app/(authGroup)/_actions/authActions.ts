@@ -1,23 +1,34 @@
 "use server";
 
-export const loginAction = async (formData: FormData) => {
-  console.log(formData);
+type LoginState = {
+     success : true,
+     statusCode : number,
+     message : string,
+     data : {
+        accessToken : string,
+        refreshToken : string
+     }
+}
 
-  const email = formData.get("email");
-  const password = formData.get("password")
+export async function loginAction(prevState: LoginState, formData: FormData) {
+    console.log(formData);
 
-  const payload = {
-    email,
-    password
-  }
+    const email = formData.get("email");
+    const password = formData.get("password");
 
-  const res = await fetch(`${process.env.BACKEND_API_URL}/api/auth/login`, {
-    method : "POST",
-    headers : {
-        "Content-Type": "application/json"
-    },
-    body : JSON.stringify (payload)
-  });
-  const result = await res.json();
-  console.log(result);
-};
+    const payload = {
+        email,
+        password
+    };
+
+    const res = await fetch(`${process.env.BACKEND_API_URL}/api/auth/login`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+    });
+    const result = await res.json();
+    console.log(result);
+    return result;
+}
