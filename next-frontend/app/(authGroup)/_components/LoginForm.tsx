@@ -1,15 +1,18 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { loginAction } from "../_actions/authActions";
 import { useActionState } from "react";
 import { toast } from "sonner";
 
 const LoginForm = () => {
   const [state, action, pending] = useActionState(loginAction, false);
+  const router = useRouter();
+
   console.log(state, "state");
 
   useEffect(() => {
@@ -17,11 +20,12 @@ const LoginForm = () => {
 
     if (state.success) {
       toast.success(state.message || "Login successful");
+      router.push("/dashboard");
     }
     if (!state.success) {
       toast.error(state.message || "Login failed");
     }
-  }, [state]);
+  }, [router, state]);
 
   return (
     <form action={action} className="space-y-4">
