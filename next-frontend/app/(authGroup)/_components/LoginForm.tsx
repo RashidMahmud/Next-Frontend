@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -11,7 +11,7 @@ import { toast } from "sonner";
 
 const LoginForm = () => {
   const [state, action, pending] = useActionState(loginAction, false);
-  const router = useRouter();
+  // const router = useRouter();
 
   console.log(state, "state");
 
@@ -20,12 +20,12 @@ const LoginForm = () => {
 
     if (state.success) {
       toast.success(state.message || "Login successful");
-      router.push("/dashboard");
+      // router.push("/dashboard");
     }
     if (!state.success) {
       toast.error(state.message || "Login failed");
     }
-  }, [router, state]);
+  }, [state]);
 
   return (
     <form action={action} className="space-y-4">
