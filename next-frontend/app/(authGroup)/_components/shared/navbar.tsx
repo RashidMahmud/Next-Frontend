@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,22 +9,34 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { User, LogOut, Settings, MoreVertical } from 'lucide-react';
+} from "@/components/ui/dropdown-menu";
+import { User, LogOut, Settings, MoreVertical } from "lucide-react";
 
 // Navigation items array for easy organization
 const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/features', label: 'Features' },
-  { href: '/contact', label: 'Contact' },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/features", label: "Features" },
+  { href: "/contact", label: "Contact" },
 ];
 
 // User dropdown menu items
 const userMenuItems = [
-  { label: 'Profile', icon: User, onClick: () => console.log('Profile clicked') },
-  { label: 'Settings', icon: Settings, onClick: () => console.log('Settings clicked') },
-  { label: 'Logout', icon: LogOut, onClick: () => console.log('Logout clicked') },
+  {
+    label: "Profile",
+    icon: User,
+    onClick: () => console.log("Profile clicked"),
+  },
+  {
+    label: "Settings",
+    icon: Settings,
+    onClick: () => console.log("Settings clicked"),
+  },
+  {
+    label: "Logout",
+    icon: LogOut,
+    onClick: () => console.log("Logout clicked"),
+  },
 ];
 
 export function Navbar() {
@@ -33,8 +45,11 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold text-foreground">
+          <div className="flex-shrink-0 ">
+            <Link
+              href="/"
+              className="text-xl font-bold text-primary"
+            >
               Logo
             </Link>
           </div>
