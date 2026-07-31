@@ -1,13 +1,13 @@
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 export default function HomePage() {
   console.log("Root Route");
   return (
     <div>
-      Hello Next.js
+      {/* Hello Next.js
       <Button size={"xs"} variant={"destructive"}>
         {" "}
         Click Me{" "}
-      </Button>
+      </Button> */}
     </div>
   );
 }
