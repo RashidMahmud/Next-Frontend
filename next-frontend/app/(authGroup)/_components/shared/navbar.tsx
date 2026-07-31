@@ -46,11 +46,8 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 ">
-            <Link
-              href="/"
-              className="text-xl font-bold text-primary"
-            >
-              Logo
+            <Link href="/" className="text-xl font-bold text-primary">
+              SILICON IT
             </Link>
           </div>
 
