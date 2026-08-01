@@ -57,7 +57,7 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                className="px-3 py-2 rounded-md text-sm font-medium text-black hover:text-white hover:bg-primary transition-colors"
               >
                 {item.label}
               </Link>
@@ -68,17 +68,27 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="rounded-full text-primary cursor-pointer"
+                >
                   <MoreVertical className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-48">
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuLabel className="text-primary">
+                  My Account
+                </DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 {userMenuItems.map((item) => {
                   const Icon = item.icon;
                   return (
-                    <DropdownMenuItem key={item.label} onClick={item.onClick}>
+                    <DropdownMenuItem
+                      key={item.label}
+                      onClick={item.onClick}
+                      className="cursor-pointer"
+                    >
                       <Icon className="mr-2 h-4 w-4" />
                       <span>{item.label}</span>
                     </DropdownMenuItem>
